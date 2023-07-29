@@ -12,6 +12,10 @@ plugins {
 
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+
+    id 'jacoco'
+    id 'com.diffplug.spotless' version '6.11.0'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
 }
 
 repositories {
@@ -19,13 +23,24 @@ repositories {
     mavenCentral()
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
 dependencies {
+
+    //logging
+    implementation 'org.slf4j:slf4j-api:2.0.7'
+    implementation 'ch.qos.logback:logback-classic:1.4.8'
+    implementation 'net.logstash.logback:logstash-logback-encoder:7.4'
+
     // Use the latest Groovy version for Spock testing
-    testImplementation 'org.codehaus.groovy:groovy:3.0.8'
+    testImplementation 'org.apache.groovy:groovy:4.0.13'
 
     // Use the awesome Spock testing and specification framework even with Java
-    testImplementation 'org.spockframework:spock-core:2.0-groovy-3.0'
-    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.spockframework:spock-core:2.3-groovy-4.0'
 
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:30.1.1-jre'
@@ -39,4 +54,19 @@ application {
 tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+}
+
+spotless {
+    java {
+        googleJavaFormat().aosp()
+    }
+
+    groovy {
+        greclipse().configFile('../greclipse.properties')
+        excludeJava()
+    }
+
+    groovyGradle {
+        greclipse().configFile('../greclipse.properties')
+    }
 }
