@@ -4,7 +4,7 @@ import spock.lang.Specification
 
 class AccountTest extends Specification {
 
-    def "Account  getter and setter work"() {
+    def "Account  getters and setters work"() {
         given:
         def firstNameExpected = "clear"
         def lastNameExpected = "water"
