@@ -49,4 +49,28 @@ class AccountTest extends Specification {
         phoneNumberActual == phoneNumberExpected
     }
 
+    def "five parameter constructor work"() {
+        given:
+        def firstNameExpected = "clear"
+        def lastNameExpected = "water"
+        def phoneNumberExpected = "818-636-8796"
+        def alkalineExpected = 45
+        def filteredExpected = 55
+        def account = new Account(firstNameExpected,lastNameExpected,phoneNumberExpected,alkalineExpected,filteredExpected)
+
+        when:
+        def firstNameActual = account.getFirstName()
+        def lastNameActual = account.getLastName()
+        def phoneNumberActual = account.getPhoneNumber()
+        def alkinlineActual = account.getAlkaline()
+        def filteredActual = account.getFiltered()
+
+        then:
+        firstNameActual == firstNameExpected
+        lastNameActual == lastNameExpected
+        phoneNumberActual == phoneNumberExpected
+        alkinlineActual == alkalineExpected
+        filteredActual == filteredExpected
+    }
+
 }
