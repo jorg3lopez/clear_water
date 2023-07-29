@@ -72,5 +72,4 @@ class AccountTest extends Specification {
         alkinlineActual == alkalineExpected
         filteredActual == filteredExpected
     }
-
 }

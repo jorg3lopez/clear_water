@@ -9,11 +9,15 @@ public class Account {
     private double alkalineWater = 0.0;
     private double filteredWater = 0.0;
 
-    public Account() {
-    }
+    public Account() {}
 
-    public Account(String firstName, String lastName, String address, String phoneNumber
-            , float alkalineWater, float filteredWater) {
+    public Account(
+            String firstName,
+            String lastName,
+            String address,
+            String phoneNumber,
+            float alkalineWater,
+            float filteredWater) {
         this.setFirstName(firstName);
         this.setLastName(lastName);
         this.setAddress(address);
@@ -22,7 +26,12 @@ public class Account {
         this.setFilteredWater(filteredWater);
     }
 
-    public Account(String firstName, String lastName, String phoneNumber, float alkalineWater, float filteredWater) {
+    public Account(
+            String firstName,
+            String lastName,
+            String phoneNumber,
+            float alkalineWater,
+            float filteredWater) {
         this.setFirstName(firstName);
         this.setLastName(lastName);
         this.setPhoneNumber(phoneNumber);
