@@ -6,28 +6,28 @@ public class Account {
     private String lastName;
     private String Address;
     private String phoneNumber;
-    private double alkaline = 0.0;
-    private double filtered = 0.0;
+    private double alkalineWater = 0.0;
+    private double filteredWater = 0.0;
 
     public Account() {
     }
 
     public Account(String firstName, String lastName, String address, String phoneNumber
-            , float alkaline, float filtered) {
+            , float alkalineWater, float filteredWater) {
         this.setFirstName(firstName);
         this.setLastName(lastName);
         this.setAddress(address);
         this.setPhoneNumber(phoneNumber);
-        this.setAlkaline(alkaline);
-        this.setFiltered(filtered);
+        this.setAlkalineWater(alkalineWater);
+        this.setFilteredWater(filteredWater);
     }
 
-    public Account(String firstName, String lastName, String phoneNumber, float alkaline, float filtered) {
+    public Account(String firstName, String lastName, String phoneNumber, float alkalineWater, float filteredWater) {
         this.setFirstName(firstName);
         this.setLastName(lastName);
         this.setPhoneNumber(phoneNumber);
-        this.setAlkaline(alkaline);
-        this.setFiltered(filtered);
+        this.setAlkalineWater(alkalineWater);
+        this.setFilteredWater(filteredWater);
     }
 
     public Account(String firstName, String lastName, String phoneNumber) {
@@ -36,20 +36,20 @@ public class Account {
         this.setPhoneNumber(phoneNumber);
     }
 
-    public double getAlkaline() {
-        return alkaline;
+    public double getAlkalineWater() {
+        return alkalineWater;
     }
 
-    public void setAlkaline(float alkaline) {
-        this.alkaline = alkaline;
+    public void setAlkalineWater(float alkalineWater) {
+        this.alkalineWater = alkalineWater;
     }
 
-    public double getFiltered() {
-        return filtered;
+    public double getFilteredWater() {
+        return filteredWater;
     }
 
-    public void setFiltered(float filtered) {
-        this.filtered = filtered;
+    public void setFilteredWater(float filteredWater) {
+        this.filteredWater = filteredWater;
     }
 
     public String getFirstName() {

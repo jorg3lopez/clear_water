@@ -19,8 +19,8 @@ class AccountTest extends Specification {
         def lastNameActual = account.getLastName()
         def addressActual = account.getAddress()
         def phoneNumberActual = account.getPhoneNumber()
-        def alkinlineActual = account.getAlkaline()
-        def filteredActual = account.getFiltered()
+        def alkinlineActual = account.getAlkalineWater()
+        def filteredActual = account.getFilteredWater()
 
         then:
         firstNameActual == firstNameExpected
@@ -62,8 +62,8 @@ class AccountTest extends Specification {
         def firstNameActual = account.getFirstName()
         def lastNameActual = account.getLastName()
         def phoneNumberActual = account.getPhoneNumber()
-        def alkinlineActual = account.getAlkaline()
-        def filteredActual = account.getFiltered()
+        def alkinlineActual = account.getAlkalineWater()
+        def filteredActual = account.getFilteredWater()
 
         then:
         firstNameActual == firstNameExpected
