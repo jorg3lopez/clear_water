@@ -7,10 +7,6 @@
  */
 
 plugins {
-
-    // Apply the java plugin
-    id 'java'
-
     // Apply the groovy plugin to also add support for Groovy (needed for Spock)
     id 'groovy'
 
