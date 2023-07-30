@@ -3,12 +3,18 @@
  */
 package clear_water;
 
+import io.javalin.Javalin;
+
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+    private static final String HEALTH_API_ENDPOINT = "/health";
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        var app = Javalin.create().start(7171);
+
+        try {
+            app.get(HEALTH_API_ENDPOINT, ctx -> ctx.result("Operational"));
+        } catch (Exception e) {
+            System.out.println("Exception occurred during bootstrap! Exiting!");
+        }
     }
 }
